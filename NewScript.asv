@@ -4,7 +4,7 @@ flags = [Uphill(1),FrontofBody(1),TightClothes(1),HardShoes(1),InAttache(1)];
 stepCount=0;
 
 %make vars
-    newX=0; newY=0; newZ=0;
+    newX; newY; newZ;
 %iterate over all data
 for i=1:length(x)
     
@@ -15,17 +15,14 @@ for i=1:length(x)
         newY(length(newY)+1) = y(i);
         newZ(length(newZ)+1) = z(i);
     else
-        %make sure next time around we are still in the same experiment!
         flags = check;
-        place = length(stepCount) + 1;
-        
-        %calulate the number of steps for each trial
-        stepCount(place) = getSteps(newX',newY',newZ');
-        
-        %THIS IS WHERE YOU INSERT YOUR FUNCTIONS TO CALCULATE THE 
-        %OTHER FEATURES
+        place = length(stepCount + 1);
+        try
+            stepCount(place) = getSteps(newX,newY,newZ);
+        catch
+            stepCount(place) = -1;
+        end
 
-        %Reset vars for next iteration
         newX = 0;
         newY = 0;
         newZ = 0;
