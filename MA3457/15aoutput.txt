@@ -1,0 +1,26 @@
+>> Lagrange_coef([8.1 8.3 8.6 8.7],[16.94410 17.56492 18.50515 18.82091])
+Undefined function 'Lagrange_coef' for input arguments of type 'double'.
+ 
+>> Lagrange_coef
+Error using Lagrange_coef (line 5)
+Not enough input arguments.
+ 
+>> Lagrange_coef([8.1 8.3 8.6 8.7],[16.94410 17.56492 18.50515 18.82091])
+
+ans =
+
+   1.0e+03 *
+
+   -0.2824    0.7319   -1.2337    0.7842
+
+>> Lagrange_Eval
+Error using Lagrange_Eval (line 5)
+Not enough input arguments.
+ 
+>> Lagrange_Eval(8.4,[8.1 8.3 8.6 8.7],ans)
+
+ans =
+
+   17.8771
+
+>> 

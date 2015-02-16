@@ -1,0 +1,16 @@
+BFGS WRITE-UP:
+
+There is an included file of output from the MATLAB command window, which includes final error and iteration count.
+
+Conclusions:
+1) I tried to keep the algorithm as close as I could to the way it was done in class. While I was mostly successful, the fact that the last function was not convex caused a great deal for myself and the classmates I consulted. 
+2) There are a wealth of resources to help solve this problem on the internet, NONE of them were helpful to me though.
+3) MATLAB will break very easily if you are not careful.
+4) There were several specific cases that myself and my classmates struggled with. (For example, in class we asked about the NAN issue.) As it turns out, the order in which things occur in a loop are very important. 
+5) There are many contextual comments in the code that will help the user decipher explanations of what is going on (unless it is painfully clear.) I stuck to the variable names in class as close as I could.
+6) We had to use an explicit technique for function evaluation and gradient calculation, because the built-in code from MATLAB was very buggy. (See the last like 50 lines of code.)
+
+If I could do it all again...I wouldn't stay up way to late to do this project, but this has been an incredibly insightful class and it's been a blast to be a part of for the past 7 weeks!
+
+All my best,
+Zach
