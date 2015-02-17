@@ -33,8 +33,7 @@ for i=1:length(x)
         ratioArray(place) = ratio(newX',newY',newZ');
         residualStepTimeArray(place) = residualStepTime(steps,newT',loc);
         %spectralPeaks returns an array, must make array of arrays
-        %spectralPeaksArray(place) = spectralPeaks(newX',newY',newZ')';
-        spectralPeaksArray = [spectralPeaksArray; spectralPeaks(newX',newY',newZ')'];
+        %spectralPeaksArray = [spectralPeaksArray; spectralPeaks(newX',newY',newZ')];
         
 
         %Reset vars for next iteration

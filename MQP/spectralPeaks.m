@@ -12,6 +12,6 @@ minPeakHeight = std(newMag);
 
 [pks, locs] = findpeaks(newMag, 'MinPeakHeight', minPeakHeight);
 
-sp = pks;
+sp = pks';
 
 end
