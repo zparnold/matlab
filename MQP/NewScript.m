@@ -1,10 +1,11 @@
 %% file for generating features
 
 flags = [Uphill(1),FrontofBody(1),TightClothes(1),HardShoes(1),InAttache(1)];
-stepCount=0;
+stepCount=[]; averageCadenceArray=[]; gaitVelocityArray=[]; oneStepLengthArray=[];
+ratioArray=[]; residualStepTimeArray=[]; spectralPeaksArray=[];
 
 %make vars
-    newX=0; newY=0; newZ=0;
+    newX=[]; newY=[]; newZ=[]; newT=[];
 %iterate over all data
 for i=1:length(x)
     
@@ -14,20 +15,25 @@ for i=1:length(x)
         newX(length(newX)+1) = x(i);
         newY(length(newY)+1) = y(i);
         newZ(length(newZ)+1) = z(i);
+        newT(length(newT)+1) = t(i);
     else
         %make sure next time around we are still in the same experiment!
         flags = check;
         place = length(stepCount) + 1;
         
         %calulate the number of steps for each trial
-        stepCount(place) = getSteps(newX',newY',newZ');
+        [s,l] = numSteps(newX',newY',newZ');
+        stepCount(place) = s;
+        averageCadenceArray(place) = averageCadence(s,t,l);
+        %gaitVelocityArray(place) = gaitVelocity(newX',newY',newZ');
+        %oneStepLengthArray(place) = oneStepLength(newX',newY',newZ');
+        %%ratioArray(place) = ratio(newX',newY',newZ');
+        %residualStepTimeArray(place) = residualStepTime(newX',newY',newZ');
         
-        %THIS IS WHERE YOU INSERT YOUR FUNCTIONS TO CALCULATE THE 
-        %OTHER FEATURES
 
         %Reset vars for next iteration
-        newX = 0;
-        newY = 0;
-        newZ = 0;
+        newX = [];
+        newY = [];
+        newZ = [];
     end
 end
