@@ -1,7 +1,8 @@
 %% file for generating features
+function script = NewScript(x,y,z,t,Uphill,FrontofBody,TightClothes,HardShoes,InAttache)
 
 flags = [Uphill(1),FrontofBody(1),TightClothes(1),HardShoes(1),InAttache(1)];
-stepCount=[]; averageCadenceArray=[]; gaitVelocityArray=[]; oneStepLengthArray=[];
+stepCount=[]; averageCadenceArray=[]; gaitVelocityArray=[]; residualStepLengthArray=[];
 ratioArray=[]; residualStepTimeArray=[]; spectralPeaksArray=[];
 
 %make vars
@@ -22,13 +23,18 @@ for i=1:length(x)
         place = length(stepCount) + 1;
         
         %calulate the number of steps for each trial
-        [s,l] = numSteps(newX',newY',newZ');
-        stepCount(place) = s;
-        averageCadenceArray(place) = averageCadence(s,t,l);
-        %gaitVelocityArray(place) = gaitVelocity(newX',newY',newZ');
-        %oneStepLengthArray(place) = oneStepLength(newX',newY',newZ');
-        %%ratioArray(place) = ratio(newX',newY',newZ');
-        %residualStepTimeArray(place) = residualStepTime(newX',newY',newZ');
+        [steps,loc] = numSteps(newX',newY',newZ');
+        cadence = averageCadence(steps,newT',loc);
+        stepCount(place) = steps;
+        averageCadenceArray(place) = cadence;
+        gaitVelocityArray(place) = gaitVelocity(cadence,steps);
+        %Length of hallway is currently hardcoded to 15.1
+        % Fix for later versions
+        residualStepLengthArray(place) = residualStepLength(steps,newT',loc,15.1);
+        ratioArray(place) = ratio(newX',newY',newZ');
+        residualStepTimeArray(place) = residualStepTime(steps,newT',loc);
+        %spectralPeaks returns an array, must make array of arrays
+        %spectralPeaksArray(place) = spectralPeaks(newX',newY',newZ');
         
 
         %Reset vars for next iteration
@@ -36,4 +42,6 @@ for i=1:length(x)
         newY = [];
         newZ = [];
     end
+end
+
 end
