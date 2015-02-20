@@ -1,5 +1,23 @@
 %% file for generating features
 
+%%
+% Starts datacollection for Mobile MATLAB and does simple feature
+% calculation
+
+
+m = mobiledev();
+
+m.AccelerationSensorEnabled = 1;
+m.logging = 1;
+pause(15);
+m.logging  = 0;
+
+[a, t] = accellog(m);
+
+copy = [a,t];
+
+
+
 flags = [Uphill(1),FrontofBody(1),TightClothes(1),HardShoes(1),InAttache(1)];
 stepCount=[]; averageCadenceArray=[]; gaitVelocityArray=[]; residualStepLengthArray=[];
 ratioArray=[]; residualStepTimeArray=[]; spectralPeaksArray=[];

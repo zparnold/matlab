@@ -1,9 +1,4 @@
-%%
-% Starts datacollection for Mobile MATLAB and does simple feature
-% calculation
 
-%Open connection
-connector on WPI2015;
 disp('I will wait till you connect your phone, type "pause off" to continue.')
 pause on;
 pause;
@@ -48,7 +43,7 @@ else
 
     [pks, locs] = findpeaks(magNoG, 'MINPEAKHEIGHT', minPeakHeight);
     
-    amplitudeVariance = 
+    %amplitudeVariance = 
     numSteps = numel(pks)
 end
 
