@@ -1,4 +1,4 @@
-function sp = spectralPeaks(x,y,z)
+function [sp,newMag] = spectralPeaks(x,y,z)
 
 [mag] = sqrt(sum(x.^2+y.^2+z.^2,2));
 
@@ -7,11 +7,14 @@ magNoG = mag-mean(mag);
 
 newMag = real(fft(magNoG));
 
+nMag = smooth(newMag);
+
 %count stemps
-minPeakHeight = std(newMag);
+minPeakHeight = std(nMag);
 
-[pks, locs] = findpeaks(newMag, 'MinPeakHeight', minPeakHeight);
+[pks, locs] = findpeaks(nMag, 'MinPeakHeight', minPeakHeight);
 
+plot(pks);
 sp = pks';
 
 end
