@@ -1,31 +1,22 @@
 %% file for generating features
 
-%%
-% Starts datacollection for Mobile MATLAB and does simple feature
-% calculation
-
-
-m = mobiledev();
-
-m.AccelerationSensorEnabled = 1;
-m.logging = 1;
-pause(15);
-m.logging  = 0;
-
-[a, t] = accellog(m);
-
-copy = [a,t];
-
-
-
 flags = [Uphill(1),FrontofBody(1),TightClothes(1),HardShoes(1),InAttache(1)];
-stepCount=[]; averageCadenceArray=[]; gaitVelocityArray=[]; residualStepLengthArray=[];
+stepCount=[]; faverageCadenceArray=[]; gaitVelocityArray=[]; residualStepLengthArray=[];
 ratioArray=[]; residualStepTimeArray=[]; spectralPeaksArray=[];
 
 %make vars
     newX=[]; newY=[]; newZ=[]; newT=[];
+    lenx = length(x);
+
+%set new last row to zeros to end the loop
+Uphill(lenx+1) = 0;
+FrontofBody(lenx+1) = 0;
+TightClothes(lenx+1) = 0;
+HardShoes(lenx+1) = 0;
+InAttache(lenx+1) = 0;
+
 %iterate over all data
-for i=1:length(x)
+for i=1:(lenx+1)
     
     %are we still in the same experiment?
     check = [Uphill(i),FrontofBody(i),TightClothes(i),HardShoes(i),InAttache(i)];
@@ -35,29 +26,42 @@ for i=1:length(x)
         newZ(length(newZ)+1) = z(i);
         newT(length(newT)+1) = t(i);
     else
+        nx = newX;
+        ny = newY;
+        nz = newZ;
+        nt = newT;
         %make sure next time around we are still in the same experiment!
         flags = check;
         place = length(stepCount) + 1;
         
         %calulate the number of steps for each trial
         [steps,loc] = numSteps(newX',newY',newZ');
+        [skew,kurt] = skewAndKurt(newX',newY',newZ');
         cadence = averageCadence(steps,newT',loc);
         stepCount(place) = steps;
         averageCadenceArray(place) = cadence;
+        skewnessArray(place) = skew;
+        kurtosisArray(place) = kurt;
         gaitVelocityArray(place) = gaitVelocity(cadence,steps);
-        %Length of hallway is currently hardcoded to 15.1
-        % Fix for later versions
         residualStepLengthArray(place) = residualStepLength(steps,newT',loc,15.1);
         ratioArray(place) = ratio(newX',newY',newZ');
         residualStepTimeArray(place) = residualStepTime(steps,newT',loc);
-        %spectralPeaks returns an array, must make array of arrays
-        %spectralPeaksArray(place) = spectralPeaks(newX',newY',newZ')';
-        spectralPeaksArray = [spectralPeaksArray; spectralPeaks(newX',newY',newZ')'];
+        spectralPeaksArray = [spectralPeaksArray 0 spectralPeaks(newX',newY',newZ')];
         
 
         %Reset vars for next iteration
         newX = [];
         newY = [];
         newZ = [];
+        newT = [];
     end
 end
+
+newStepCount = stepCount';
+newAverageCadence = averageCadenceArray';
+newGaitVelocity = gaitVelocityArray';
+newResidualStepLength = residualStepLengthArray';
+newSkewness = skewnessArray';
+newKurtosis = kurtosisArray';
+newRatio = ratioArray';
+newResidualStepTime = residualStepTimeArray';
