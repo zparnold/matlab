@@ -14,7 +14,6 @@ minPeakHeight = std(nMag);
 
 [pks, locs] = findpeaks(nMag, 'MinPeakHeight', minPeakHeight);
 
-plot(pks);
 sp = pks';
 
 end
