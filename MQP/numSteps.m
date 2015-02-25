@@ -4,7 +4,7 @@
 %z is the z output
 function [s,l] = numSteps(x, y, z)
 
-[mag] = sqrt(sum(x.^2+y.^2+z.^2,2));
+[mag] = sqrt(x.^2+y.^2+z.^2);
 
 %adjust for gravity
 magNoG = mag-mean(mag);

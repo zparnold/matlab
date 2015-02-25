@@ -15,14 +15,6 @@ FrontofBody(lenx+1) = 0;
 TightClothes(lenx+1) = 0;
 HardShoes(lenx+1) = 0;
 InAttache(lenx+1) = 0;
-x(lenx+1) = 0;
-y(lenx+1) = 0;
-z(lenx+1) = 0;
-t(lenx+1) = 0;
-nextX = [];
-nextY = [];
-nextZ = [];
-nextT = [];
 
 %iterate over all data
 for i=1:(lenx+1)
@@ -30,20 +22,15 @@ for i=1:(lenx+1)
     %are we still in the same experiment?
     check = [Uphill(i),FrontofBody(i),TightClothes(i),HardShoes(i),InAttache(i)];
     if (check == flags)
-        newX = [newX nextX];
-        newY = [newY nextY];
-        newZ = [newZ nextZ];
-        newT = [newT nextT];
+        newX(length(newX)+1) = nextX;
+        newY(length(newY)+1) = nex;
+        newZ(length(newZ)+1) = z(i);
+        newT(length(newT)+1) = t(i);
         
         newX(length(newX)+1) = x(i);
         newY(length(newY)+1) = y(i);
         newZ(length(newZ)+1) = z(i);
         newT(length(newT)+1) = t(i);
-        
-        nextX = [];
-        nextY = [];
-        nextZ = [];
-        nextT = [];
     else
         nextX = x(i);
         nextY = y(i);
