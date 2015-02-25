@@ -7,7 +7,7 @@ m = mobiledev()
 
 m.AccelerationSensorEnabled = 1;
 %tell user to start
-pause(10);
+%pause(1);
 [s, Fs] = audioread('MQP/ding.mp3');
 sound(s,Fs);
 
