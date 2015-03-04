@@ -70,7 +70,13 @@ for i=1:(lenx+1)
         residualStepLengthArray(place) = residualStepLength(steps,newT',loc,15.1);
         ratioArray(place) = ratio(newX',newY',newZ');
         residualStepTimeArray(place) = residualStepTime(steps,newT',loc);
-        spectralPeaksArray = [spectralPeaksArray 0 spectralPeaks(newX',newY',newZ')];
+        
+        mag = (newX.^2+newY.^2+newZ.^2);
+        magNoG = mag - mean(mag);
+        
+        sigNoiseRatioArray(place) = snr(magNoG);
+        totHarmonicDistArray(place) = thd(magNoG);
+        avgPowerArray(place) = bandpower(magNoG);
         
 
         %Reset vars for next iteration
@@ -89,3 +95,6 @@ newSkewness = skewnessArray';
 newKurtosis = kurtosisArray';
 newRatio = ratioArray';
 newResidualStepTime = residualStepTimeArray';
+newSigNoiseRatio = sigNoiseRatioArray';
+newHarmDist = totHarmonicDistArray';
+newAvgPower = avgPowerArray';

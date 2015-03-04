@@ -5,14 +5,12 @@ function [sp,newMag] = spectralPeaks(x,y,z)
 %adjust for gravity
 magNoG = mag-mean(mag);
 
-newMag = real(fft(magNoG));
-
-nMag = smooth(newMag);
+newMag = pwelch(magNoG);
 
 %count stemps
-minPeakHeight = std(nMag);
+minPeakHeight = std(newMag);
 
-[pks, locs] = findpeaks(nMag, 'MinPeakHeight', minPeakHeight);
+[pks, locs] = findpeaks(newMag, 'MinPeakHeight', minPeakHeight);
 
 sp = pks';
 
