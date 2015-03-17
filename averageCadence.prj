@@ -1,0 +1,151 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="2022037698" file="C:\Users\Zach\Documents\MATLAB\matlab\averageCadence.prj" location="C:\Users\Zach\Documents\MATLAB\matlab" name="averageCadence" preferred-package-location="C:\Users\Zach\Documents\MATLAB\matlab\averageCadence\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.mps.archive" target-name="MATLAB Compiler for MATLAB Production Server">
+    <param.appname>averageCadence</param.appname>
+    <param.icon />
+    <param.icons />
+    <param.version>1.0</param.version>
+    <param.intermediate>${PROJECT_ROOT}\averageCadence\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\averageCadence\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\averageCadence\for_redistribution</param.output>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.embed.ctf>true</param.embed.ctf>
+    <param.server.ctf>${PROJECT_ROOT}\averageCadence\for_testing\server\averageCadence.ctf</param.server.ctf>
+    <param.server.readme>${PROJECT_ROOT}\averageCadence\for_testing\server\readme.txt</param.server.readme>
+    <param.target.type>subtarget.mads</param.target.type>
+    <param.support.packages />
+    <param.required.mcr.products>
+      <item>35000</item>
+      <item>35001</item>
+    </param.required.mcr.products>
+    <param.namespace>averageCadence</param.namespace>
+    <param.classorg />
+    <param.function.data />
+    <param.mads.server.configuration />
+    <param.user.only.registration>false</param.user.only.registration>
+    <param.net.framework>option.net.framework.default</param.net.framework>
+    <param.assembly.type>false</param.assembly.type>
+    <param.encryption.key.file />
+    <param.net.enable.remoting>false</param.net.enable.remoting>
+    <param.net.tsa.enable>false</param.net.tsa.enable>
+    <param.net.tsa.assembly />
+    <param.net.tsa.interface />
+    <param.net.tsa.namespace>averageCadence</param.net.tsa.namespace>
+    <param.net.tsa.superclass>Class1</param.net.tsa.superclass>
+    <param.net.tsa.metadata />
+    <param.net.tsa.metadata.assembly>C:\Users\Zach\Documents\MATLAB</param.net.tsa.metadata.assembly>
+    <param.mps.server.dir>server</param.mps.server.dir>
+    <param.mps.client.dir>client</param.mps.client.dir>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.version />
+      <param.intermediate />
+      <param.files.only />
+      <param.output />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.embed.ctf />
+      <param.server.ctf />
+      <param.server.readme />
+      <param.target.type />
+      <param.support.packages />
+      <param.namespace />
+      <param.classorg />
+      <param.function.data />
+      <param.mads.server.configuration />
+      <param.user.only.registration />
+      <param.net.framework />
+      <param.assembly.type />
+      <param.encryption.key.file />
+      <param.net.enable.remoting />
+      <param.net.tsa.enable />
+      <param.net.tsa.assembly />
+      <param.net.tsa.interface />
+      <param.net.tsa.namespace />
+      <param.net.tsa.superclass />
+      <param.net.tsa.metadata />
+      <param.net.tsa.metadata.assembly />
+      <param.mps.server.dir />
+      <param.mps.client.dir />
+    </unset>
+    <fileset.exports>
+      <file>${PROJECT_ROOT}\MQP\averageCadence.m</file>
+      <file>${PROJECT_ROOT}\MQP\averageStepLength.m</file>
+      <file>${PROJECT_ROOT}\MQP\featuresForSingleStreamOfData.m</file>
+      <file>${PROJECT_ROOT}\MQP\gaitVelocity.m</file>
+      <file>${PROJECT_ROOT}\MQP\numSteps.m</file>
+      <file>${PROJECT_ROOT}\MQP\ratio.m</file>
+      <file>${PROJECT_ROOT}\MQP\residualStepLength.m</file>
+      <file>${PROJECT_ROOT}\MQP\residualStepTime.m</file>
+      <file>${PROJECT_ROOT}\MQP\skewAndKurt.m</file>
+      <file>${PROJECT_ROOT}\MQP\spectralPeaks.m</file>
+    </fileset.exports>
+    <fileset.classes>
+      <entity.package name="">
+        <entity.class name="Class1">
+          <file>${PROJECT_ROOT}\MQP\averageCadence.m</file>
+          <file>${PROJECT_ROOT}\MQP\averageStepLength.m</file>
+          <file>${PROJECT_ROOT}\MQP\featuresForSingleStreamOfData.m</file>
+          <file>${PROJECT_ROOT}\MQP\gaitVelocity.m</file>
+          <file>${PROJECT_ROOT}\MQP\numSteps.m</file>
+          <file>${PROJECT_ROOT}\MQP\ratio.m</file>
+          <file>${PROJECT_ROOT}\MQP\residualStepLength.m</file>
+          <file>${PROJECT_ROOT}\MQP\residualStepTime.m</file>
+          <file>${PROJECT_ROOT}\MQP\skewAndKurt.m</file>
+          <file>${PROJECT_ROOT}\MQP\spectralPeaks.m</file>
+        </entity.class>
+      </entity.package>
+    </fileset.classes>
+    <fileset.resources />
+    <fileset.package />
+    <fileset.package.server>
+      <file>${PROJECT_ROOT}\averageCadence\for_testing\server\averageCadence.ctf</file>
+      <file>${PROJECT_ROOT}\averageCadence\for_testing\server\readme.txt</file>
+    </fileset.package.server>
+    <fileset.package.client />
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}\averageCadence\for_testing" name="averageCadence.ctf" optional="false">C:\Users\Zach\Documents\MATLAB\matlab\averageCadence\for_testing\averageCadence.ctf</file>
+      <file location="${PROJECT_ROOT}\averageCadence\for_testing" name="readme.txt" optional="true">C:\Users\Zach\Documents\MATLAB\matlab\averageCadence\for_testing\readme.txt</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2014b</root>
+      <toolboxes>
+        <toolbox name="fixedpoint" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.2</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

@@ -1,0 +1,54 @@
+ant:
+<ant>
+  <mkdir dir="C:\Users\Zach\Documents\MATLAB\matlab\averageCadence\for_redistribution" />
+  <mkdir dir="C:\Users\Zach\Documents\MATLAB\matlab\averageCadence\for_testing" />
+</ant>
+mcc -W CTF:averageCadence -U -d C:\Users\Zach\Documents\MATLAB\matlab\averageCadence\for_testing -v C:\Users\Zach\Documents\MATLAB\matlab\MQP\averageCadence.m C:\Users\Zach\Documents\MATLAB\matlab\MQP\averageStepLength.m C:\Users\Zach\Documents\MATLAB\matlab\MQP\featuresForSingleStreamOfData.m C:\Users\Zach\Documents\MATLAB\matlab\MQP\gaitVelocity.m C:\Users\Zach\Documents\MATLAB\matlab\MQP\numSteps.m C:\Users\Zach\Documents\MATLAB\matlab\MQP\ratio.m C:\Users\Zach\Documents\MATLAB\matlab\MQP\residualStepLength.m C:\Users\Zach\Documents\MATLAB\matlab\MQP\residualStepTime.m C:\Users\Zach\Documents\MATLAB\matlab\MQP\skewAndKurt.m C:\Users\Zach\Documents\MATLAB\matlab\MQP\spectralPeaks.m 
+Compiler version: 5.2 (R2014b)
+Dependency analysis by REQUIREMENTS.
+[Warning: Adding path "C:\Users\Zach\Documents\MATLAB\matlab\MQP" to Compiler
+path instance.] 
+[Warning: Adding path "C:\Users\Zach\Documents\MATLAB\matlab\MQP" to Compiler
+path instance.] 
+[Warning: Adding path "C:\Users\Zach\Documents\MATLAB\matlab\MQP" to Compiler
+path instance.] 
+[Warning: Adding path "C:\Users\Zach\Documents\MATLAB\matlab\MQP" to Compiler
+path instance.] 
+[Warning: Adding path "C:\Users\Zach\Documents\MATLAB\matlab\MQP" to Compiler
+path instance.] 
+[Warning: Adding path "C:\Users\Zach\Documents\MATLAB\matlab\MQP" to Compiler
+path instance.] 
+[Warning: Adding path "C:\Users\Zach\Documents\MATLAB\matlab\MQP" to Compiler
+path instance.] 
+[Warning: Adding path "C:\Users\Zach\Documents\MATLAB\matlab\MQP" to Compiler
+path instance.] 
+[Warning: Adding path "C:\Users\Zach\Documents\MATLAB\matlab\MQP" to Compiler
+path instance.] 
+[Warning: Adding path "C:\Users\Zach\Documents\MATLAB\matlab\MQP" to Compiler
+path instance.] 
+Parsing file "C:\Users\Zach\Documents\MATLAB\matlab\MQP\averageCadence.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Users\Zach\Documents\MATLAB\matlab\MQP\averageStepLength.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Users\Zach\Documents\MATLAB\matlab\MQP\featuresForSingleStreamOfData.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Users\Zach\Documents\MATLAB\matlab\MQP\gaitVelocity.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Users\Zach\Documents\MATLAB\matlab\MQP\numSteps.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Users\Zach\Documents\MATLAB\matlab\MQP\ratio.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Users\Zach\Documents\MATLAB\matlab\MQP\residualStepLength.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Users\Zach\Documents\MATLAB\matlab\MQP\residualStepTime.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Users\Zach\Documents\MATLAB\matlab\MQP\skewAndKurt.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Users\Zach\Documents\MATLAB\matlab\MQP\spectralPeaks.m"
+	(Referenced from: "Compiler Command Line").
+Deleting 3 temporary MEX authorization files.
+Removing: 'C:\Users\Zach\AppData\Local\Temp\mathworks_tmp_5424_4617_5424.auth'.
+Removing: 'C:\Users\Zach\AppData\Local\Temp\mathworks_tmp_5424_17320_5424.auth'.
+Removing: 'C:\Users\Zach\AppData\Local\Temp\mathworks_tmp_5424_13560_5424.auth'.
+Generating file "C:\Users\Zach\Documents\MATLAB\matlab\averageCadence\for_testing\readme.txt".
+com.mathworks.toolbox.compiler.plugin.DeployableArchivePackageCommand@787d41ff
