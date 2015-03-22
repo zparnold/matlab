@@ -12,9 +12,17 @@ retArray(length(retArray)+1) = cadence;
 retArray(length(retArray)+1) = skew;
 retArray(length(retArray)+1) = kurt;
 retArray(length(retArray)+1) = gaitVelocity(cadence,steps);
-retArray(length(retArray)+1) = residualStepLength(steps,t,loc,15.1);
+retArray(length(retArray)+1) = residualStepLength(steps,t,loc,13);
 retArray(length(retArray)+1) = ratio(x,y,z);
 retArray(length(retArray)+1) = residualStepTime(steps,t,loc);
 
+mag = (x.^2+y.^2+z.^2);
+magNoG = mag - mean(mag);
+retArray(length(retArray)+1) = bandpower(magNoG);
+retArray(length(retArray)+1) = snr(magNoG);
+retArray(length(retArray)+1) = thd(magNoG);
+
 ar = retArray;
+
+
 end

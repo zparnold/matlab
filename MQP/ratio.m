@@ -2,6 +2,7 @@
 function r = ratio(x,y,z)
 
 sp = spectralPeaks(x,y,z);
+sp = sp(1:floor(end/2));
 
 numSP = length(sp);
 
