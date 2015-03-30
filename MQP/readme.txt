@@ -28,7 +28,7 @@ in the MathWorks Documentation Center.
 . Ensure you have the version 1.7 of the Java Development Kit (JDK) to integrate the 
   component. 
 
-. mycomponent.jar must be included in your CLASSPATH.
+. featureCalculator.jar must be included in your CLASSPATH.
 
 . javabuilder.jar must be included in your CLASSPATH. javabuilder.jar 
   can be found in: 
@@ -40,13 +40,13 @@ NOTE: You will need administrator rights to run MCRInstaller.
  
 2. Files to Deploy and Package
 
--mycomponent.jar
+-featureCalculator.jar
 -MCRInstaller.exe 
    - if end users are unable to download the MATLAB runtime using the above  
      link, include it when building your component by clicking 
      the "Runtime downloaded from web" link in the Deployment Tool
 -Javadoc   
-   - javadoc for mycomponent is in the doc directory. While  
+   - javadoc for featureCalculator is in the doc directory. While  
      distributing the javadoc, this entire directory should be distributed.
 -This readme file
 
